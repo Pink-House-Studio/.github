@@ -1,0 +1,6 @@
+# Pink House Studio : les fichiers qui tournent sous Linux (serveurs, conteneurs, CI) gardent des fins de ligne LF
+# sur toutes les machines, quel que soit core.autocrlf. Sans cela, un poste Windows écrit des CRLF dans des scripts
+# envoyés à un bash distant ou lancés dans un conteneur, et ils échouent sur le  en trop.
+*.sh        text eol=lf
+*.bash      text eol=lf
+Dockerfile* text eol=lf
