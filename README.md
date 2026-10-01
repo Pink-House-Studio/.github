@@ -34,3 +34,9 @@ vide fait échouer le check.
 pas inaperçu : les PR des dépôts concernés échouent immédiatement sur « intitulé absent de la
 section ». Le fragment d'intitulé attendu est défini dans `ci-workflows`, dans
 `.github/actions/pr-adversarial/cli.mjs` (`FIELDS`) — change les deux ensemble.
+
+## La section « Explication client » est lue aussi
+
+Sur un dépôt de site client, sa phrase entre telle quelle dans le journal du portail client
+(portail.pinkhouse.fr). Vide, la PR n'y entre pas. ⚠️ Le portail cherche l'intitulé exact
+`## Explication client` : le renommer ici vide le journal de tous les clients.

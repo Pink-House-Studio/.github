@@ -8,6 +8,14 @@ des trois questions est laissée vide. Les PR de Dependabot en sont exemptées, 
 brouillons attendent d'être marqués « prêt pour relecture ».
 -->
 
+## Explication client
+
+<!-- Dépôt d'un site client seulement ; ailleurs, efface cette section.
+     Une ou deux phrases pour le client, vouvoiement, sans jargon : ce qui change pour lui
+     ou pour ses visiteurs. Ex. « La page Contact affiche désormais vos horaires d'été. »
+     Le portail client (portail.pinkhouse.fr) la reprend telle quelle dans son journal.
+     Laissée vide, la PR n'y entre pas : c'est le bon choix pour un changement invisible. -->
+
 ## Ce que ça change, et pourquoi
 
 <!-- Le problème d'abord, le correctif ensuite. Si le problème tient en une ligne, une
