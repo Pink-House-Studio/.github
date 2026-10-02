@@ -19,7 +19,12 @@ brouillons attendent d'être marqués « prêt pour relecture ».
 ## Ce que ça change, et pourquoi
 
 <!-- Le problème d'abord, le correctif ensuite. Si le problème tient en une ligne, une
-     ligne suffit. Lien vers le ticket ou l'issue, s'il y en a un. -->
+     ligne suffit. Lien vers le ticket ou l'issue, s'il y en a un.
+     Dépôt d'un site client, PR qui répond à une demande du client : écris, sur une ligne à
+     part et HORS de ce commentaire, « Demande : » suivi de l'identifiant du ticket « Demande
+     client » du projet d'abonnement (ex. Demande : XXXMAINT-12). Quand l'aperçu de la PR est
+     prêt, phs-mcp passe cette demande à « Aperçu prêt » et y poste le lien. Sans la ligne,
+     rien ne bouge. Jamais dans « Explication client » : ce texte part tel quel au journal. -->
 
 ## Mesuré
 

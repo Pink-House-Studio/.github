@@ -40,3 +40,10 @@ section ». Le fragment d'intitulé attendu est défini dans `ci-workflows`, dan
 Sur un dépôt de site client, sa phrase entre telle quelle dans le journal du portail client
 (portail.pinkhouse.fr). Vide, la PR n'y entre pas. ⚠️ Le portail cherche l'intitulé exact
 `## Explication client` : le renommer ici vide le journal de tous les clients.
+
+## La ligne « Demande : » est lue elle aussi
+
+Sur un dépôt de site client, une ligne `Demande : XXXMAINT-12` dans le corps de la PR, hors
+commentaire, nomme la demande client que la PR traite. Quand l'aperçu de la PR est prêt,
+phs-mcp passe ce ticket à « Aperçu prêt » et y poste le lien (phs-vps `docs/phs-mcp.md`). Un
+identifiant d'un autre projet que l'abonnement du site est refusé.
