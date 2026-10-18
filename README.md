@@ -1,49 +1,20 @@
 # `.github` — les fichiers de process par défaut de Pink House Studio
 
 Ce dépôt ne contient **aucun code**. Il porte les *default community health files* de
-l'organisation : les fichiers que GitHub applique automatiquement à tous les dépôts qui n'ont
-pas leur propre version. Aujourd'hui, un seul — le gabarit de pull request.
+l'organisation : les fichiers que GitHub applique à tous les dépôts qui n'ont pas leur propre
+version. Il est public parce que GitHub n'hérite ces fichiers que d'un `.github` public.
 
-## Pourquoi il est public alors que tous les autres dépôts sont privés
+## Pas de gabarit de PR par défaut (depuis le 2026-10-18)
 
-Ce n'est pas un choix, c'est une contrainte de GitHub : **les gabarits d'issue et de pull
-request ne sont hérités que depuis un dépôt `.github` public.** Un `.github` privé n'est pas
-supporté pour ces fichiers-là. Le contenu ici est de la prose de process — aucun secret,
-aucun nom de client, aucune information d'infrastructure.
+Mathieu, le 18-10 : personne ne lit les PR. Un dépôt interne n'a donc aucun gabarit, et une PR
+y tient en deux ou trois lignes libres.
 
-L'alternative aurait été de recopier le gabarit dans chaque dépôt : quinze copies que rien
-ne compare, et un nouveau dépôt qui naît sans gabarit jusqu'à ce que quelqu'un y pense.
+Les **dépôts de maintenance client** portent leur propre `.github/pull_request_template.md`,
+copié du starter `astro-sanity-brevo-starter` : « Explication client », « Quoi », « Vérifié ».
 
-## Ce qu'il contient
-
-| Fichier | Effet |
-|---|---|
-| `.github/PULL_REQUEST_TEMPLATE.md` | pré-remplit le corps de toute nouvelle PR dans un dépôt de l'org qui n'a pas son propre gabarit |
-
-Un dépôt qui possède son propre `.github/pull_request_template.md` **écrase** celui-ci — c'est
-le cas de `phs-vps`, dont le gabarit porte en plus des points propres à l'infrastructure.
-
-## La section « Passe adverse » est lue, pas décorative
-
-Le gabarit pose trois questions : comment ce changement peut échouer sans rien dire, ce qui a
-été tenté pour le casser, ce qui n'a **pas** été vérifié. Là où la garde
-`pr-adversarial-pass` est branchée (workflow réutilisable dans `ci-workflows`), une réponse
-vide fait échouer le check.
-
-⚠️ **Si tu renommes une des trois questions ici, la garde ne la reconnaît plus.** Ça ne passe
-pas inaperçu : les PR des dépôts concernés échouent immédiatement sur « intitulé absent de la
-section ». Le fragment d'intitulé attendu est défini dans `ci-workflows`, dans
-`.github/actions/pr-adversarial/cli.mjs` (`FIELDS`) — change les deux ensemble.
-
-## La section « Explication client » est lue aussi
-
-Sur un dépôt de site client, sa phrase entre telle quelle dans le journal du portail client
-(portail.pinkhouse.fr). Vide, la PR n'y entre pas. ⚠️ Le portail cherche l'intitulé exact
-`## Explication client` : le renommer ici vide le journal de tous les clients.
-
-## La ligne « Demande : » est lue elle aussi
-
-Sur un dépôt de site client, une ligne `Demande : XXXMAINT-12` dans le corps de la PR, hors
-commentaire, nomme la demande client que la PR traite. Quand l'aperçu de la PR est prêt,
-phs-mcp passe ce ticket à « Aperçu prêt » et y poste le lien (phs-vps `docs/phs-mcp.md`). Un
-identifiant d'un autre projet que l'abonnement du site est refusé.
+- **« Explication client » est lue.** Sa phrase entre telle quelle dans le journal du portail
+  client (portail.pinkhouse.fr). Vide, la PR n'y entre pas. Le portail cherche l'intitulé exact
+  `## Explication client` : le renommer vide le journal du client.
+- **La ligne `Demande : XXXMAINT-12`** nomme la demande client que la PR traite, hors de
+  « Explication client ». Quand l'aperçu est prêt, phs-mcp passe ce ticket à « Aperçu prêt »
+  (phs-vps `docs/phs-mcp.md`).
